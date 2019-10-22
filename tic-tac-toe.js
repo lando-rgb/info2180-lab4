@@ -10,7 +10,11 @@ window.onload = function(){
     }
   document.getElementById("status").classList.remove("you-won")
   document.getElementById("status").innerHTML = "Move your mouse over a square and click to play an X or an O."
+  
 }
+ for (let j = 0; j <board[i].length; j++){
+   board[j].setAttribute("unSelectable", "on")
+ }
 }
 
 function play(){
@@ -36,6 +40,8 @@ function play(){
       }
       
   }
+  if(board[i].innerHTML != "") return;
+
 }
 function checkWinner(click){
     var s = document.getElementById('status');
@@ -74,4 +80,7 @@ function checkWinner(click){
        }
   
 }
+
+
+  
 
